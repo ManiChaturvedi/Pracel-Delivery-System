@@ -25,7 +25,8 @@ function App() {
     try {
       const formData = new FormData();
       formData.append('xmlFile', file);
-      const response = await axios.post('http://localhost:3000/upload', formData, {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      const response = await axios.post(`${apiUrl}/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       const transformedParcels = response.data.results.map(parcel => ({
