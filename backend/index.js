@@ -1,8 +1,8 @@
 const express = require('express');
 const multer = require('multer');
 const cors = require('cors');
-const { parseXmlBuffer } = require('./xmlParser');
-const { routeParcel } = require('./parcelRouter');
+const { parseXmlBuffer } = require('./src/xmlParser');
+const { routeParcel } = require('./src/parcelRouter');
 
 const app = express();
 const PORT = 3000;
